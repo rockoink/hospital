@@ -35,6 +35,19 @@ public class Usuario {
         return id;
     }
 
+    public String getMiUsuario(){
+        return getNombre()+" "+getPassword();
+    }
+    
+        @Override
+    public String toString() {
+        return "Usuario{" + "id=" + id + ", login=" + login + ", password=" + password + ", nombre=" + nombre +", paterno="+paterno+
+                ",edad="+edad+'}';
+    }
+
+    
+    
+    
     public void setId(String id) {
         this.id = id;
     }
