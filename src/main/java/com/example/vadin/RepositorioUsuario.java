@@ -14,6 +14,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  * @author Sony
  */
 public interface RepositorioUsuario extends MongoRepository<Usuario, String> {
-    public List<Usuario> findByNombre(String nombre);
-    public List<Usuario> findByPassword (String password);
+    Usuario findByNombre(String nombre);
+    //public List<Usuario> findByPassword (String password);
 }

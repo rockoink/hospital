@@ -16,11 +16,17 @@ public class Usuario {
     
     public String id;
    public String login;
-   public String password;
+   
    public String nombre;
+   public String password;
    public String paterno;
    public String edad;
    public Date fechaIngerso;
+
+    public Usuario(String nombre, String password) {
+        this.nombre = nombre;
+        this.password = password;
+    }
    ArrayList<Usuario> usuarios;
 
     public Usuario(ArrayList<Usuario> usuarios) {
