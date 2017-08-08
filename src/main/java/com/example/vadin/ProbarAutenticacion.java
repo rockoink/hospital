@@ -12,8 +12,11 @@ package com.example.vadin;
 public class ProbarAutenticacion {
 
     public static void main(String[] args) {
-        Autenticacion a = new Autenticacion();
-        a.autenticar();
+      //  Autenticacion a = new Autenticacion();
+        //a.autenticar();
+        //id,nombre,password,paterno
+        Usuario u=new Usuario ("1","rodrigo matutino","rodrigo","vilches");
+        System.out.println(u);
     }
     
 }

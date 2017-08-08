@@ -9,9 +9,15 @@ package com.example.vadin;
  *
  * @author Sony
  */
-public class Especialidad {
-  String nombre;
-  
+public class Puesto {
+    String nombre;
+
+    public Puesto(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Puesto() {
+    }
 
     public String getNombre() {
         return nombre;
@@ -20,14 +26,4 @@ public class Especialidad {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
-    public Especialidad(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public Especialidad() {
-    }
-
-    
-    
 }

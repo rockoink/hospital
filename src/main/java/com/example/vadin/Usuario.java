@@ -23,6 +23,13 @@ public class Usuario {
    public String edad;
    public Date fechaIngerso;
 
+    public Usuario(String id, String nombre, String password, String paterno) {
+        this.id = id;
+        this.nombre = nombre;
+        this.password = password;
+        this.paterno = paterno;
+    }
+
     public Usuario(String nombre, String password) {
         this.nombre = nombre;
         this.password = password;
