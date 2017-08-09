@@ -7,13 +7,14 @@ package com.example.vadin;
 
 import java.util.ArrayList;
 import java.util.Date;
+import org.springframework.data.annotation.Id;
 
 /**
  *
  * @author Sony
  */
 public class Usuario {
-    
+@Id    
     public String id;
    public String login;
    
@@ -22,6 +23,12 @@ public class Usuario {
    public String paterno;
    public String edad;
    public Date fechaIngerso;
+
+    public Usuario(String nombre, String paterno, Date fechaIngerso) {
+        this.nombre = nombre;
+        this.paterno = paterno;
+        this.fechaIngerso = fechaIngerso;
+    }
 
     public Usuario(String id, String nombre, String password, String paterno) {
         this.id = id;

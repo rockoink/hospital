@@ -23,6 +23,7 @@ import com.vaadin.ui.Window;
 import com.vaadin.ui.themes.ValoTheme;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -192,7 +193,15 @@ RepositorioPaciente repositorioPaciente;
             selectPuesto.setWidth("100%");
         //boton para guardar empleados
         Button botonGuardarEmpleados=new Button("Guardar Empleado",FontAwesome.AMBULANCE);
+        botonGuardarEmpleados.addClickListener(hola->{
+           Usuario u=new Usuario();
+           u.setNombre(textoNombre.getValue());
+           u.setPaterno(textoPaterno.getValue());
+           u.setFechaIngerso(new Date(date.getDateFormat()));
+          repositorioUsuario.save(u);
+         //selectPuesto.getSelectedItem().get().getNombre();
         
+    });
         
         //añadir componentess
         vlEmpleados.addComponent(textoNombre);

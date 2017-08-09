@@ -5,18 +5,33 @@
  */
 package com.example.vadin;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 /**
  *
  * @author Sony
  */
-public class ProbarAutenticacion {
+@SpringBootApplication
 
+public class ProbarAutenticacion implements CommandLineRunner {
+
+    @Autowired RepositorioUsuario repositorioUsuario;
+    
     public static void main(String[] args) {
+        
+    }
+        
+        @Override
+    public void run(String... strings) throws Exception {
+ 
       //  Autenticacion a = new Autenticacion();
         //a.autenticar();
         //id,nombre,password,paterno
-        Usuario u=new Usuario ("1","rodrigo matutino","rodrigo","vilches");
-        System.out.println(u);
+        Usuario usu=new Usuario ("10","rodrigo nombre","rodrigo","vilches");
+        Usuario guardado=repositorioUsuario.save(usu);
+        System.out.println("vcbgbt "+usu);
     }
     
 }

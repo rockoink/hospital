@@ -32,23 +32,26 @@ public class ControladorUsuario {
     }
     
     @RequestMapping(
-        value = {"/usuario/{id}/{login}/{password}/{nombre}/{paterno}/{edad}"},
-        method = {RequestMethod.GET},
+        value = {"/usuario/{id}/{login}/{nombre}/{password}/{paterno}/{edad}"},
+        method = {RequestMethod.POST},
         headers = {"Accept=text/html"}
     )
-    public String guardar(@PathVariable String id,@PathVariable String login,@PathVariable String password,
-            @PathVariable String nombre, @PathVariable String paterno, @PathVariable String edad) {
-        this.repositorioUsuario.save(new Usuario(id,login,password,nombre, paterno, edad));
+    public String guardar(@PathVariable String id,@PathVariable String nombre,
+            @PathVariable String password, @PathVariable String paterno) {
+        this.repositorioUsuario.save(new Usuario(id,nombre,password, paterno));
         return "Usuario guardado con exito";
     }
-    //buscar todos
+    
+
+//buscar todos
       @RequestMapping(value="/usuario", method = RequestMethod.GET, headers = {"Accept=Application/json"})
     public ArrayList<Usuario> getTodos(){
          
         return (ArrayList<Usuario>) repositorioUsuario.findAll();
     }
     
-   //gUARDAR POST usuarios
+/*
+    //gUARDAR POST usuarios
    @RequestMapping(value="/usuario", method=RequestMethod.POST,
             headers={"Accept=Application/json"})
    
@@ -62,7 +65,7 @@ public class ControladorUsuario {
         return u;
    }
    
-    
+  */  
     
     
 }
